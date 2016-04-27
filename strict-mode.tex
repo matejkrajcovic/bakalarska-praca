@@ -1,0 +1,23 @@
+\chapter{Striktný a superstriktný mód}
+
+\label{kap:striktny_mod} % id kapitoly pre prikaz ref
+
+V tejto kapitole popisujem pre striktný a superstriktný mód dôvody vzniku, implementáciu a zmeny, ktoré zavádzajú.
+
+\section{Striktný mód}
+Striktný mód je vlastnosť pridaná vo verzii ECMAScript 5, ktorá obmedzuje použitie určitých vlastností jazyka, ktoré sú považované za náchylné k chybám, a pridáva zmeny, ktoré robia kód v striktnom móde bezpečnejší.
+
+Kontkrétne sa jedná o tieto zmeny~\cite{EcmaScript}:
+\begin{itemize}
+\item Medzi rezervované slová sa pridávajú $implements$, $interface$, $let$, $package$, $private$, $protected$, $public$, $static$ a $yield$, lebo sa očakáva, že budú použité v budúcich verziách a nemôžu byť preto použité ako názvy funkcií a premenných.
+\item Priradenie do neexistujúcej premennej už danú globálnu premennú nevytvorí, ale spôsobí výnimku ReferenceError. Tým sa ľahšie odhalia chyby, keď programátor omylom spravil chybu v názve premennej a hodnotu priradí do odlišnej premennej.
+\item Nie je možné použiť číselné literály, ktoré začínajú nulou. Všetky internetové prehliadače týmto spôsobom definujú čísla so základom 8, ale nie je to súčasť štandardu EcmaScript 5.
+\item Nie je možné použiť výraz $with$. Tento výraz umožňuje pristupovať k vlastnostiam objektu, ktorý je argument výrazu, priamo bez nutnosti písať prefix objektu.
+  % radšej dať ukážku
+\end{itemize}
+
+\subsection{Spôsob použitia}
+
+\subsection{Zmeny}
+
+\section{Superstriktný mód}

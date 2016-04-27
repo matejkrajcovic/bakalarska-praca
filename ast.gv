@@ -1,0 +1,25 @@
+/* courtesy Ian Darwin and Geoff Collyer, Softquad Inc. */
+digraph ast {
+    rankdir=TD;
+	size="9";
+	node [color=lightblue2, style=filled];
+    "Program" -> "FunctionDeclaration";
+    "FunctionDeclaration" -> "Identifier(hello_world)";
+    "Identifier(hello_world)"[label=<Identifier<br/>hello_world>];
+    "FunctionDeclaration" -> identifierName1;
+    identifierName1[label=<Identifier<br/>name>];
+    "FunctionDeclaration" -> "BlockStatement";
+    "BlockStatement" -> "ExpressionStatement";
+    "ExpressionStatement" -> "CallExpression";
+    "CallExpression" -> "MemberExpression";
+    "MemberExpression" -> "Identifier(console)";
+    "Identifier(console)"[label=<Identifier<br/>console>];
+    "MemberExpression" -> "Identifier(log)";
+    "Identifier(log)"[label=<Identifier<br/>log>];
+    "CallExpression" -> "BinaryExpression";
+    "BinaryExpression"[label=<BinaryExpression<br/>+>]
+    "BinaryExpression" -> "StringLiteral(Hello World )";
+    "StringLiteral(Hello World )"[label=<StringLiteral<br/>"Hello World ">]
+    "BinaryExpression" -> identifierName2;
+    identifierName2[label=<Identifier<br/>name>];
+}
